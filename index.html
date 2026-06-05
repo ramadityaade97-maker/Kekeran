@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mini Ogoh-Ogoh Team</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#ff0000;
+    filter:blur(200px);
+    opacity:.25;
+    top:-100px;
+}
+
+.hero-content{
+    z-index:2;
+}
+
+.logo{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #ff0000;
+    margin-bottom:30px;
+    box-shadow:0 0 40px rgba(255,0,0,.6);
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+    font-weight:800;
+}
+
+.hero h1 span{
+    color:#ff2d2d;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#d1d1d1;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 40px;
+    background:#ff0000;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(255,0,0,.7);
+}
+
+/* SECTION */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+    color:#ff2d2d;
+}
+
+/* PROJECTS */
+
+.project-container{
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+}
+
+.project-card{
+    display:flex;
+    align-items:center;
+    background:#111;
+    border:1px solid rgba(255,0,0,.2);
+    border-radius:25px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.project-card:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 40px rgba(255,0,0,.35);
+}
+
+.project-card img{
+    width:450px;
+    height:350px;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.project-content{
+    padding:35px;
+    flex:1;
+}
+
+.project-content h3{
+    color:#ff2d2d;
+    font-size:1.8rem;
+    margin-bottom:20px;
+}
+
+.project-content p{
+    color:#d6d6d6;
+    line-height:2;
+    text-align:justify;
+}
+
+/* ABOUT */
+
+.about{
+    background:#0b0b0b;
+    border-top:1px solid rgba(255,0,0,.2);
+    border-bottom:1px solid rgba(255,0,0,.2);
+}
+
+.about-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-box p{
+    color:#d6d6d6;
+    line-height:2;
+}
+
+/* TEAM */
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.member{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,0,0,.2);
+    transition:.4s;
+}
+
+.member:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 35px rgba(255,0,0,.4);
+}
+
+.member img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.member-content{
+    padding:25px;
+}
+
+.member-content h3{
+    margin-bottom:5px;
+}
+
+.role{
+    color:#ff2d2d;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.member-content p{
+    color:#d1d1d1;
+    line-height:1.6;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid rgba(255,0,0,.2);
+    color:#999;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.logo{
+    width:130px;
+    height:130px;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+@media (max-width: 768px){
+
+    /* GENERAL */
+
+    section{
+        padding:70px 6%;
+    }
+
+    /* HERO */
+
+    .hero{
+        min-height:90vh;
+        padding:30px 20px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+        line-height:1.2;
+    }
+
+    .hero p{
+        font-size:0.95rem;
+        line-height:1.8;
+    }
+
+    .logo{
+        width:120px;
+        height:120px;
+    }
+
+    .btn{
+        padding:12px 30px;
+        font-size:0.95rem;
+    }
+
+    /* TITLE */
+
+    .section-title{
+        margin-bottom:40px;
+    }
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    /* PROJECT */
+
+    .project-card{
+        flex-direction:column !important;
+        padding:15px;
+    }
+
+    .project-card img{
+        width:100%;
+        height:260px;
+        border-radius:15px;
+    }
+
+    .project-content{
+        padding:20px 5px;
+    }
+
+    .project-content h3{
+        font-size:1.3rem;
+        text-align:center;
+    }
+
+    .project-content p{
+        font-size:0.95rem;
+        line-height:1.8;
+        text-align:justify;
+    }
+
+    /* ABOUT */
+
+    .about-box p{
+        font-size:0.95rem;
+        text-align:justify;
+        line-height:1.9;
+    }
+
+    /* TEAM */
+
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
+    .member img{
+        height:350px;
+    }
+
+    .member-content{
+        text-align:center;
+    }
+
+    .member-content h3{
+        font-size:1.2rem;
+    }
+
+    .role{
+        font-size:0.9rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+        font-size:0.85rem;
+        padding:25px 15px;
+    }
+
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="KEKERAN.jpeg" alt="Logo Mini Ogoh Ogoh" class="logo">
+
+<h1>Menyama With <span>KEKERAN</span></h1>
+
+<p>
+Team kreatif yang menggabungkan budaya Bali dengan teknologi modern
+untuk menciptakan miniatur Ogoh-Ogoh yang menarik, edukatif,
+dan memiliki nilai seni tinggi.
+</p>
+
+<a href="#Galeri-Project" class="btn">Mini Ogoh-Ogoh</a>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="Galeri-Project">
+
+<div class="section-title">
+<h2>Galeri Project</h2>
+</div>
+
+<div class="project-container">
+
+    <!-- PROJECT 1 -->
+
+    <div class="project-card">
+
+        <img src="lebur.jpeg" alt="Bhuta Lebur Sangsa">
+
+        <div class="project-content">
+
+            <h3>SANG HYANG BHUTA LEBUR SANGSA</h3>
+
+            <p>
+                Dalam perwujudannya, Sang Hyang Butha Lebur Sangsa dapat merubah wujudnya dengan rupa apa saja untuk menggiring dan menuntun manusia menjadi pribadi yang kebingungan, akibatnya manusia menjadi salah ucap. salah lihat, gila, dan tersesat jauh. Karena dituntun oleh para butha, maka manusia-pun menjadi pemabuk, pembohong, pelupa, penjarah, dan durhaka. Sang Hyang Butha Lebur Sangsa, apabila tidak diupacarai melalui upacara yang bernama Caru Lebur Sangsa, akan selalu mengganggu dan menyengsarai kehidupan manusia yang tidak pernah beryadnya, yang hanya memikirkan hidupnya hanya untuk makan, tidur, dan lupa diri. Segala malapetaka inilah merupakan ciptaan Sang Hyang Butha Lebur Sangsa. Maka dari itu, sebagai manusia hendaknya jagalah hati, ajaran bathin, hidup rukun tanpa saling mencurigai, dan tetap melakukan yadnya secara tulus iklas maka akibatnya seluruh keturunanpun akan mendapatkan kerahayuan, dan hidup dalam keharmonisan
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- PROJECT 2 -->
+
+    <div class="project-card">
+
+        <img src="nyungkling.jpeg" alt="Rawa Kumbala Murti">
+
+        <div class="project-content">
+
+            <h3>RAWA KUMBALA MURTI</h3>
+
+            <p>
+                Pada kala dunia mulai diliputi kegelapan, saat hati manusia dipenuhi amarah, keserakahan, iri, dan kesombongan, maka lahirlah kekuatan Adharma yang menjelma menjadi sosok mengerikan… Rawakumbala Murti. Ia bukan sekadar raksasa. Ia adalah bayangan dari jiwa manusia itu sendiri. Dengan banyak wajah yang mengerikan, setiap wajah memancarkan sifat buruk—amarah yang membara, kesombongan yang membutakan, nafsu yang tak terkendali, dan kebingungan yang menyesatkan. 
+Tubuhnya menjulang, kukunya tajam, dan suaranya menggelegar, mengguncang keseimbangan alam. Namun di balik wujudnya yang mengerikan, tersembunyi sumber kekuatan yang tak kasat mata. Pada bagian belakang tubuhnya, berdenyut sebuah pusat energi gelap, Cakra Anahata, cakra hati yang telah tercemar. Cakra yang seharusnya memancarkan kasih dan keseimbangan, kini berubah menjadi sumber iri, kebencian, dan dendam. Dari sanalah Rawakumbala Murti memperoleh kekuatannya bukan dari apa yang terlihat di depan, melainkan dari kegelapan yang tersembunyi di dalam diri.
+Ketika dunia hampir jatuh dalam kehancuran, muncullah kekuatan agung. Bhatara Kala. Sang penyeimbang jagat, penguasa waktu dan hukum alam. Namun ia tidak datang untuk sekadar menghancurkan Ia datang untuk menyeimbangkan. Karena Rawakumbala Murti bukan berasal dari luar melainkan lahir dari dalam diri manusia. Para Dewa pun menyadari, bahwa kehancuran Adharma tidak cukup dengan kekuatan ilahi saja. Melainkan harus dibarengi kesadaran manusia. Melalui Bhuta Yadnya, manusia diajarkan untuk tidak memusnahkan kegelapan,melainkan menetralkannya. serta mengembalikan keseimbangan antara diri, alam, dan semesta.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- PROJECT 3 -->
+
+    <div class="project-card">
+
+        <img src="gajah.jpeg" alt="Gajamukha Andhakara Mukti">
+
+        <div class="project-content">
+
+            <h3>GAJAMUKHA ANDHAKARA MUKTI</h3>
+
+            <p>
+                Pada saat dunia mulai dipenuhi oleh sifat adharma, ketika hati
+                manusia dikuasai oleh amarah, keserakahan, kesombongan, dan
+                kebingungan, maka lahirlah energi kegelapan yang dikenal
+                sebagai Bhuta Kala.
+
+                Dari kegelapan itu muncul sosok menyeramkan bernama
+                Gajamukha Andhakara Murti, yaitu perwujudan (Murti)
+                makhluk berkepala gajah (Gajamukha) yang lahir dari
+                kegelapan (Andhakara).
+
+                Ia memiliki kepala gajah yang melambangkan pikiran atau
+                kebijaksanaan yang telah menyimpang, menjadi kasar dan tidak
+                terkendali. Sayap dan kaki seperti kelelawar melambangkan
+                kekuatan malam yang bergerak bebas tanpa kendali,
+                menyebarkan rasa takut dan kegelapan ke dalam hati manusia.
+
+                Di tangan kanannya, ia menggenggam gada hitam yang
+                melambangkan kekuatan besar yang telah kehilangan arah
+                dharma. Kekuatan tersebut digunakan bukan untuk melindungi,
+                melainkan untuk menghancurkan dan menindas kebenaran.
+
+                Sosok ini menjadi simbol bahwa kebijaksanaan tanpa dharma
+                dapat berubah menjadi kegelapan. Gajamukha Andhakara Murti
+                bukan hanya perwujudan kekuatan jahat, tetapi juga cerminan
+                dari diri manusia ketika kehilangan kendali atas pikiran dan
+                moralnya, membawa gangguan, merusak kesucian, dan
+                mengacaukan keseimbangan dunia.
+
+                Oleh karena itu, manusia diingatkan untuk selalu menjaga
+                pikiran dan hati agar tetap berada di jalan dharma agar tidak
+                terjerat dalam kegelapan adharma.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="section-title">
+<h2>Tentang Karya</h2>
+</div>
+
+<div class="about-box">
+
+<p>
+Ogoh - Ogoh Mini merupakan sebuah karya inovatif yang bertujuan
+melestarikan budaya Bali dalam bentuk miniatur modern.
+Melalui proyek ini, kami ingin memperkenalkan tradisi Ogoh-Ogoh
+kepada generasi muda dengan tampilan yang menarik dan mudah dipahami.
+Selain memiliki nilai budaya, karya ini juga dapat dijadikan
+media pembelajaran dan koleksi seni khas Bali.
+</p>
+
+</div>
+
+</section>
+
+<!-- TEAM -->
+
+<section>
+
+<div class="section-title">
+<h2>Tim Kami</h2>
+</div>
+
+<div class="team-grid">
+
+<div class="member">
+<img src="barak.jpeg">
+<div class="member-content">
+<h3>Dek Biriks</h3>
+<div class="role">Leader</div>
+<p>Mengatur seluruh proses pengerjaan proyek dan koordinasi tim.</p>
+</div>
+</div>
+
+<div class="member">
+<img src="sumadi.jpeg">
+<div class="member-content">
+<h3>Rama Sum</h3>
+<div class="role">Sering Berpartisipasi Tetapi Tidak Dapat Nasi</div>
+<p>tukang tegen gogoh</p>
+</div>
+</div>
+
+<div class="member">
+<img src="bogel.jpeg">
+<div class="member-content">
+<h3>Tu BOGELLL</h3>
+<div class="role">Brothers With God</div>
+<p>orang penting dalam urusan ngayab ngayab, kadang ketug ketug kadang bantug</p>
+</div>
+</div>
+
+<div class="member">
+<img src="ade.jpeg">
+<div class="member-content">
+<h3>Ade Bagus</h3>
+<div class="role">FRONT END DEVELOPER</div>
+<p>Urusan dokumentasi wa gen cang</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Kekeran | Ramz Entertaiment
+</footer>
+
+</body>
+</html>
